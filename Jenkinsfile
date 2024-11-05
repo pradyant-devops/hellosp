@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/pradyant-devops/hellosp.git'
+                git branch: 'main', url: 'https://github.com/pradyant-devops/hellosp.git'
             }
         }
         stage('Build') {
