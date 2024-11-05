@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Use Maven to build the project
-                    sh './mvnw clean package -DskipTests'
+                    sudo sh './mvnw clean package -DskipTests'
                 }
             }
         }
