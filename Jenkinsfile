@@ -11,18 +11,10 @@ pipeline {
             steps {
                 script {
                     // Use Maven to build the project
-                    sh './mvnw clean package -DskipTests'
+                   bat 'mvn clean install'  // Run Maven build on Windows
                 }
             }
         }
-        stage('Test') {
-            steps {
-                script {
-                    // Run tests (optional)
-                    sh './mvnw test'
-                }
-            }
-        }
-        
+               
     }
 }
