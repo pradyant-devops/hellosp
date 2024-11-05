@@ -1,36 +1,36 @@
 pipeline {
     agent any
-    
-    environment {
-        MAVEN_HOME = 'C:/Users/pradyantprakashkhara/Downloads/apache-maven-3.9.9-bin/apache-maven-3.9.9'  // Define path to Maven installation
-    }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/pradyant-devops/hellosp.git'
+                git 'https://github.com/pradyant-devops/hellosp.git'
             }
         }
-
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                script {
+                    // Use Maven to build the project
+                    sh './mvnw clean package -DskipTests'
+                }
             }
         }
-
+        stage('Test') {
+            steps {
+                script {
+                    // Run tests (optional)
+                    sh './mvnw test'
+                }
+            }
+        }
         stage('Deploy') {
             steps {
-                bat 'start java -jar target/helloworld-0.0.1-SNAPSHOT.jar'
+                script {
+                    // Deploy to a server (e.g., copy .jar to the remote server)
+                    //sh 'scp target/*.jar user@yourserver:/path/to/deployment/folder'
+                    // Or if deploying to a cloud provider, you can configure respective commands.
+                }
             }
-        }
-    }
-
-     post {
-        success {
-            echo 'Pipeline executed successfully!'
-        }
-        failure {
-            echo 'Pipeline failed.'
         }
     }
 }
