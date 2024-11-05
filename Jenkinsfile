@@ -23,14 +23,6 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
-            steps {
-                script {
-                    // Deploy to a server (e.g., copy .jar to the remote server)
-                    //sh 'scp target/*.jar user@yourserver:/path/to/deployment/folder'
-                    // Or if deploying to a cloud provider, you can configure respective commands.
-                }
-            }
-        }
+        
     }
 }
