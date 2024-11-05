@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        MAVEN_HOME = 'C:\Users\pradyantprakashkhara\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9'  // Define path to Maven installation
+        MAVEN_HOME = 'C:/Users/pradyantprakashkhara/Downloads/apache-maven-3.9.9-bin/apache-maven-3.9.9'  // Define path to Maven installation
     }
 
     stages {
