@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Use Maven to build the project
-                   bat 'mvn clean install'  // Run Maven build on Windows
+                   bat 'mvn clean install'  // Run Maven build on Windows done
                 }
             }
         }
