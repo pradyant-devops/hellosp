@@ -1,20 +1,17 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
+        stage('Check Environment') {
             steps {
-                 git branch: 'main', url: 'https://github.com/pradyant-devops/hellosp.git'
+                bat 'echo %PATH%'  // Print PATH variable to check if System32 is included
+                bat 'echo %SystemRoot%'  // Print the SystemRoot to ensure Windows environment is configured correctly
+                bat 'dir C:\\Windows\\System32\\cmd.exe'  // Verify cmd.exe exists and is accessible
             }
         }
         stage('Build') {
             steps {
-                script {
-                    // Use Maven to build the project
-                   bat 'mvn clean install'  // Run Maven build on Windows done
-                }
+                bat 'cmd /c echo Building...'
             }
         }
-               
     }
 }
