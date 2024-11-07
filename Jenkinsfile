@@ -13,7 +13,7 @@ pipeline {
                 sh './mvnw clean package -DskipTests'  // Run the maven wrapper
             }
         }
-    }
+
        stage('Deploy') {
             steps {
                 script {
@@ -31,4 +31,5 @@ pipeline {
             }
         }
     }
+}
 }
