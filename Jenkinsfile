@@ -13,7 +13,7 @@ pipeline {
             // Set the path to the generated WAR file
             def warFile = '/var/lib/jenkins/workspace/hello-ci/target/hellosp-0.0.1-SNAPSHOT.war'
             def contextPath = '/hellosp'  // Set your desired context path
-            def tomcatUrl = 'http://51.20.5.220:8080/manager/text'  // Tomcat manager URL
+            def tomcatUrl = 'http://51.20.5.220:8082/manager/text'  // Tomcat manager URL
             def tomcatUser = 'adminscript'      // Tomcat manager username
             def tomcatPassword = 'admin'  // Tomcat manager password
             
